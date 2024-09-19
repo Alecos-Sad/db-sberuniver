@@ -1,42 +1,45 @@
 --Наполнение таблиц
 --Таблица с жанрами
+-- Добавление нескольких строк с использованием многострочного синтаксиса VALUES:
 
-INSERT INTO student16.tb_genres (name) VALUES ('комедия');
-INSERT INTO student16.tb_genres (name) VALUES ('триллер');
-INSERT INTO student16.tb_genres (name) VALUES ('драма');
-INSERT INTO student16.tb_genres (name) VALUES ('детектив');
-INSERT INTO student16.tb_genres (name) VALUES ('фантастика');
-INSERT INTO student16.tb_genres (name) VALUES ('ужасы');
-
+INSERT INTO student16.tb_genres (name) VALUES
+                                              ('комедия'),
+                                              ('триллер'),
+                                              ('драма'),
+                                              ('детектив'),
+                                              ('фантастика'),
+                                              ('ужасы');
 --Таблица со странами
 
-INSERT INTO student16.tb_countries (name) VALUES ('США');
-INSERT INTO student16.tb_countries (name) VALUES ('Южная Корея');
-INSERT INTO student16.tb_countries (name) VALUES ('Россия');
-INSERT INTO student16.tb_countries (name) VALUES ('СССР');
+INSERT INTO student16.tb_countries (name) VALUES
+                                                 ('США'),
+                                                 ('Южная Корея'),
+                                                 ('Россия'),
+                                                 ('СССР');
 
 --Таблица с режиссерами
 
-INSERT INTO student16.tb_directors (name, country_id)  VALUES (
+INSERT INTO student16.tb_directors (name, country_id)  VALUES
+     (
      'Пон Джун-хо',
      (SELECT country_id FROM student16.tb_countries WHERE name='Южная Корея')
-);
-INSERT INTO student16.tb_directors (name, country_id) VALUES (
+     ),
+     (
      'Брайан Левант',
      (SELECT country_id FROM student16.tb_countries WHERE name='США')
-);
-INSERT INTO student16.tb_directors (name, country_id) VALUES (
+     ),
+     (
      'Ли Айзек Чун',
      (SELECT country_id FROM student16.tb_countries WHERE name='США')
-);
-INSERT INTO student16.tb_directors (name, country_id) VALUES (
+     ),
+     (
      'Андрей Звягинцев',
      (SELECT country_id FROM student16.tb_countries WHERE name='Россия')
-);
-INSERT INTO student16.tb_directors (name, country_id) VALUES (
+     ),
+     (
      'Андрей Тарковский',
      (SELECT country_id FROM student16.tb_countries WHERE name='СССР')
-);
+     );
 
 -- Таблица с фильмами
 INSERT INTO student16.tb_films (name, year, genre_id, director_id, age_rating, rating)  VALUES (

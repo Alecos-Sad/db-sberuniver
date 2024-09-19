@@ -10,9 +10,8 @@ ALTER TABLE IF EXISTS student16.tb_films
     DROP COLUMN IF EXISTS genre,
     ADD COLUMN IF NOT EXISTS genre_id                   SMALLINT,
     ADD COLUMN IF NOT EXISTS director_id                SMALLINT,
-    ADD COLUMN IF NOT EXISTS genre                      VARCHAR,
     ADD COLUMN IF NOT EXISTS age_rating                 VARCHAR,
-    ADD COLUMN IF NOT EXISTS rating                     SMALLINT
+    ADD COLUMN IF NOT EXISTS rating                     FLOAT
 ;
 
 COMMENT ON TABLE  student16.tb_films                                IS 'Таблица с фильмами онлайн кинотеатра';
